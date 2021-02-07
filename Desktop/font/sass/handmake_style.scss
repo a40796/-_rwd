@@ -1,0 +1,370 @@
+@import'./sassVar';
+@import'./sassMix';
+
+//這個是取消全部樣式的css
+@import "./reset";
+//這個是bubble_btn的css，記得html要引用bubble_btn動畫效果的js & TweenMax
+@import "./bubblebtn";
+
+//----------------以上不要動！！，以下開放自己的sass，按照自己的區塊放(可自己更動區塊名字)-------------------------
+//首頁
+
+//商品頁＆商品內頁
+
+// //客製化多肉 ＆ 心理測驗
+// @import "sass/custom";
+// @import "sass/mindtest";
+
+//手作課程
+
+//部落格
+
+//購物車＆結帳系統
+
+//會員中心 & 會員登入
+
+//Q&A
+
+//----------------共用scss開始-------------------------
+$html_fontsize: 62.5%;
+$font_family: "Noto Sans TC", "sans-serif";
+$fontsize: (
+  "mini": 1.2rem,
+  "small": 1.4rem,
+  "normall": 1.6rem,
+  "larger": 1.8rem,
+  "big": 2.6rem,
+);
+
+$color: (
+  // 主色
+  "main_g": #2f4f4f,
+  "gold": #d0c3a3,
+  // Secondary 輔色
+  "green1": #6a764e,
+  "green2": #979f77,
+  "gray": #eeebeb,
+  "gray2": #efefef,
+  // Accent color 強調色
+  "yellow": #d9a420,
+  // heart 收藏愛心
+  "pink": #d87680,
+  "white": #ffffff
+);
+
+%box_sizing {
+  box-sizing: border-box;
+}
+
+%ex {
+  padding: 50px 0;
+}
+
+@mixin img {
+  width: 100%;
+  @content;
+}
+
+@mixin a_link {
+  text-decoration: none;
+  display: block;
+}
+
+@mixin section {
+  // width: 100vw;
+  text-align: center;
+}
+
+@mixin article {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@mixin btn {
+  border-radius: 10px;
+  padding: 15px 0;
+  width: 200px; //220-250px
+  @content;
+}
+
+@mixin full_wrapper {
+  background-image: url(../img/gray_bg.png);
+  background-repeat: repeat-y;
+  background-position: center center;
+  background-size: cover;
+}
+
+*,
+*:before,
+*::after {
+  @extend %box_sizing;
+}
+
+body {
+  font-family: $font_family;
+  color: map-get($color, "main_g");
+  letter-spacing: 0.1em;
+  line-height: 1.8;
+  font-size: map-get($fontsize, "normall");
+}
+
+html {
+  font-size: $html_fontsize;
+  // font-size: 16px;
+}
+
+a {
+  @include a_link;
+  color: map-get($color, "main_g");
+}
+
+img {
+  @include img;
+}
+
+section {
+  // @include section;
+}
+
+article {
+  @include article;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.btn_green {
+  a {
+    background-color: map-get($color, "main_g");
+    color: map-get($color, "white");
+    margin: 0px auto;
+    @include btn;
+    @include a_link;
+  }
+}
+
+.btn_yellow {
+  a {
+    background-color: map-get($color, "yellow");
+    margin: 0px auto;
+    @include btn;
+    @include a_link;
+  }
+}
+
+.ex {
+  @extend %ex;
+}
+
+.bread {
+  float: left;
+  font-size: map-get($fontsize, "mini");
+  display: flex;
+}
+
+.full_wrapper {
+  @include full_wrapper;
+}
+
+// footer
+footer {
+  background-color: #2f4f4f;
+  color: #fff;
+  font-size: 12px;
+}
+
+footer a {
+  color: #fff;
+}
+
+footer article {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 50px 0;
+}
+
+footer .line {
+  border-left: 2px solid #fff;
+  height: 165px;
+}
+
+.brand_info {
+  height: 165px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.brand_info ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.brand_info ol {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 28px;
+}
+
+.brand_info li {
+  margin-right: 30px;
+}
+
+.logo_info {
+  line-height: 2;
+}
+
+.logo_info img {
+  display: block;
+  width: 250px;
+  margin-bottom: 20px;
+}
+// -------------------------------以上為團隊規範
+
+%ex20px {
+  padding: 20px 0;
+}
+
+.ex20px{
+  @extend %ex20px;
+}
+
+
+body{
+  cursor: default;
+  // color:#eeebeb;
+}
+.full_wrapper{
+  // background-image: url(../img/1.jpg);
+}
+
+.handmake_section{
+    display: flex;
+    justify-content: center;
+}
+
+.handmake_left{
+
+  background-size: contain;
+  font-weight: bold;
+
+
+  h1{
+
+    margin: 10px;
+  }
+    .handmake_left_class{
+      display: flex;
+      flex-direction: column;
+     
+        button {
+          @include buttons(); 
+        }
+        button:hover{
+          background-color:#fff ;
+          color:#2f4f4f ;
+        }
+    }
+
+    .fa-calendar-alt{
+
+      margin-left:10px;
+      cursor:pointer;
+    }
+    .custom_select{
+      margin-left: 10px;
+      width: 200px;
+    }
+
+    .choseNumber{
+      display: flex;
+      margin: 10px;
+        .number_people{
+          width: 40px;
+          text-align: center;
+        }
+        
+        .fa-minus{
+   
+          margin:0 10px;
+          cursor:pointer;
+        }
+        .fa-plus{
+
+          margin:0 10px;
+          cursor:pointer;
+        }
+    }
+
+    .handmake_left_text{
+      span{
+
+        color: #d9a420;
+      }
+      h1:nth-child(2){
+        color:#d9a420;
+      }
+    }
+
+    .SignUp{
+      background-color:#d9a420;
+      width: 200px;
+      border-radius: 10px;  
+      color:#2f4f4f ;
+      padding: 10px;
+      font-weight: bold;
+    }
+    .SignUp:hover{
+      background-color: #fff;
+      color:#2f4f4f ;
+    }
+}
+
+.handmake_right{
+  // width: 800px;
+  margin-left: 10px;
+  color: #2f4f4f;
+  h1{
+    font-weight: bold;
+    margin: 10px;
+  }
+  p{
+  }
+  img{
+    display: block;
+    width: 400px;  
+    margin: 0 auto;
+  }
+
+  .handmake_right_main{
+    padding-left: 50px;
+    // color:#eeebeb;
+    p{
+      margin:10px 40px
+    }
+    p:nth-child(2){
+      font-weight: bold;
+    }
+    p:before{
+      content: '';
+      display: block;
+      width: 4px;
+      height: 30px;
+      background-color:#d9a420 ;
+      float: left;
+      margin-right: 10px;
+    }
+    li{
+      margin:10px 30px
+    }
+  }
+  .notice_main{
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px 0;
+  }
+}
+
+
+

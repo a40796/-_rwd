@@ -1,0 +1,547 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.bubble_btnn {
+  margin: 0 10px;
+}
+
+.button, .button_y {
+  -webkit-font-smoothing: antialiased;
+  background-color: #2f4f4f;
+  width: 200px;
+  border: none;
+  color: #fff;
+  display: inline-block;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  user-select: none;
+  letter-spacing: 1px;
+  padding: 15px 0;
+  transition: all 0.1s ease-out;
+  border-radius: 10px;
+}
+
+.button--bubble, .button_y--bubble {
+  position: relative;
+  z-index: 2;
+}
+
+.button--bubble:hover + .button--bubble__effect-container .circle, .button_y--bubble:hover + .button--bubble__effect-container .circle {
+  background: #2f4f4f;
+}
+
+.button--bubble:hover + .button--bubble__effect-container .button, .button_y--bubble:hover + .button--bubble__effect-container .button {
+  background: #2f4f4f;
+}
+
+.button--bubble:active + .button--bubble__effect-container, .button_y--bubble:active + .button--bubble__effect-container {
+  transform: scale(0.35);
+}
+
+.button--bubble__container, .button_y--bubble__container {
+  position: relative;
+  display: inline-block;
+}
+
+.button--bubble__container .effect-button, .button_y--bubble__container .effect-button {
+  position: absolute;
+  width: 50%;
+  height: 25%;
+  top: 50%;
+  left: 25%;
+  z-index: 1;
+  transform: translateY(-50%);
+  background: #2f4f4f;
+  transition: background 0.1s ease-out;
+}
+
+.button--bubble__effect-container {
+  position: absolute;
+  display: block;
+  width: 200%;
+  height: 400%;
+  top: -150%;
+  left: -50%;
+  filter: url("#goo");
+  transition: all 0.1s ease-out;
+  pointer-events: none;
+}
+
+.button--bubble__effect-container .circle {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  border-radius: 25px;
+  background: #2f4f4f;
+  transition: background 0.1s ease-out;
+}
+
+.button--bubble__effect-container .circle.top-left {
+  top: 40%;
+  left: 27%;
+}
+
+.button--bubble__effect-container .circle.bottom-right {
+  bottom: 40%;
+  right: 27%;
+}
+
+.goo {
+  position: absolute;
+  visibility: hidden;
+  width: 1px;
+  height: 1px;
+}
+
+.button--bubble__container {
+  top: 50%;
+  margin-top: -25px;
+}
+
+@keyframes hue-rotate {
+  from {
+    -moz-filter: hue-rotate(0);
+    -ms-filter: hue-rotate(0);
+    filter: hue-rotate(0);
+  }
+  to {
+    -moz-filter: hue-rotate(360deg);
+    -ms-filter: hue-rotate(360deg);
+    filter: hue-rotate(360deg);
+  }
+}
+
+.button_y {
+  color: #2f4f4f;
+  background-color: #d9a420;
+}
+
+.button_y:hover + .button--bubble__effect-container .circle {
+  background: #d9a420;
+}
+
+.button_y:hover + .button--bubble__effect-container .button {
+  background: #d9a420;
+}
+
+.button_y__container {
+  position: relative;
+  display: inline-block;
+}
+
+.button_y__container .effect-button {
+  background: #d9a420;
+}
+
+.button_y .circle {
+  background: #d9a420;
+}
+
+*,
+*:before,
+*::after {
+  box-sizing: border-box;
+}
+
+.ex {
+  padding: 50px 0;
+}
+
+body {
+  font-family: "Noto Sans TC", "sans-serif";
+  color: #2f4f4f;
+  letter-spacing: 0.1em;
+  line-height: 1.8;
+  font-size: 1.6rem;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+a {
+  text-decoration: none;
+  display: block;
+  color: #2f4f4f;
+}
+
+img {
+  width: 100%;
+}
+
+article {
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.btn_green a {
+  background-color: #2f4f4f;
+  color: #ffffff;
+  margin: 0px auto;
+  border-radius: 10px;
+  padding: 15px 0;
+  width: 200px;
+  text-decoration: none;
+  display: block;
+}
+
+.btn_yellow a {
+  background-color: #d9a420;
+  margin: 0px auto;
+  border-radius: 10px;
+  padding: 15px 0;
+  width: 200px;
+  text-decoration: none;
+  display: block;
+}
+
+.bread {
+  float: left;
+  font-size: 1.2rem;
+  display: flex;
+}
+
+.full_wrapper {
+  background-image: url(../img/gray_bg.png);
+  background-repeat: repeat-y;
+  background-position: center center;
+  background-size: cover;
+}
+
+footer {
+  background-color: #2f4f4f;
+  color: #fff;
+  font-size: 12px;
+}
+
+footer a {
+  color: #fff;
+}
+
+footer article {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 50px 0;
+}
+
+footer .line {
+  border-left: 2px solid #fff;
+  height: 165px;
+}
+
+.brand_info {
+  height: 165px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.brand_info ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.brand_info ol {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 28px;
+}
+
+.brand_info li {
+  margin-right: 30px;
+}
+
+.logo_info {
+  line-height: 2;
+}
+
+.logo_info img {
+  display: block;
+  width: 250px;
+  margin-bottom: 20px;
+}
+
+.ex20px {
+  padding: 20px 0;
+}
+
+body {
+  cursor: default;
+}
+
+.handmake_section {
+  display: flex;
+  justify-content: center;
+}
+
+.handmake_left {
+  background-size: contain;
+  font-weight: bold;
+}
+
+.handmake_left h1 {
+  margin: 10px;
+}
+
+.handmake_left .handmake_left_class {
+  display: flex;
+  flex-direction: column;
+}
+
+.handmake_left .handmake_left_class button {
+  background-color: #2f4f4f;
+  border-radius: 5px;
+  margin: 5px;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 5px;
+  font-weight: bold;
+  width: 200px;
+  cursor: pointer;
+}
+
+.handmake_left .handmake_left_class button:hover {
+  background-color: #fff;
+  color: #2f4f4f;
+}
+
+.handmake_left .fa-calendar-alt {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.handmake_left .custom_select {
+  margin-left: 10px;
+  width: 200px;
+}
+
+.handmake_left .choseNumber {
+  display: flex;
+  margin: 10px;
+}
+
+.handmake_left .choseNumber .number_people {
+  width: 40px;
+  text-align: center;
+}
+
+.handmake_left .choseNumber .fa-minus {
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.handmake_left .choseNumber .fa-plus {
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.handmake_left .handmake_left_text span {
+  color: #d9a420;
+}
+
+.handmake_left .handmake_left_text h1:nth-child(2) {
+  color: #d9a420;
+}
+
+.handmake_left .SignUp {
+  background-color: #d9a420;
+  width: 200px;
+  border-radius: 10px;
+  color: #2f4f4f;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.handmake_left .SignUp:hover {
+  background-color: #fff;
+  color: #2f4f4f;
+}
+
+.handmake_right {
+  margin-left: 10px;
+  color: #2f4f4f;
+}
+
+.handmake_right h1 {
+  font-weight: bold;
+  margin: 10px;
+}
+
+.handmake_right img {
+  display: block;
+  width: 400px;
+  margin: 0 auto;
+}
+
+.handmake_right .handmake_right_main {
+  padding-left: 50px;
+}
+
+.handmake_right .handmake_right_main p {
+  margin: 10px 40px;
+}
+
+.handmake_right .handmake_right_main p:nth-child(2) {
+  font-weight: bold;
+}
+
+.handmake_right .handmake_right_main p:before {
+  content: '';
+  display: block;
+  width: 4px;
+  height: 30px;
+  background-color: #d9a420;
+  float: left;
+  margin-right: 10px;
+}
+
+.handmake_right .handmake_right_main li {
+  margin: 10px 30px;
+}
+
+.handmake_right .notice_main {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px 0;
+}
+/*# sourceMappingURL=handmake_style.css.map */
